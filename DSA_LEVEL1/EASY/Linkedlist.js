@@ -14,7 +14,7 @@ class Linkedlist {
   insert(value, index) {
     let node = new Node(value);
     if (this.size == 0) {
-      this.node = this.head;
+      this.head = node;
     }
   }
 
@@ -22,9 +22,19 @@ class Linkedlist {
     if (this.size == 0) {
       return "List is empty";
     } else {
+      let value = "";
+      let current = this.head;
+
+      while (current) {
+        value += `${current.value}`;
+        current = current.next;
+      }
+      return value;
     }
   }
 }
 
 let list = new Linkedlist();
-console.log(list);
+list.insert(0);
+list.insert(1);
+console.log(list.printlist());
