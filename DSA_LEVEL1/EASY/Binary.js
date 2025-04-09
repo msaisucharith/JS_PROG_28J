@@ -1,20 +1,23 @@
-function binarySearch(arr, target) {
-  let start = 0;
-  let end = arr.length - 1;
-  while (start <= end) {
-    let middle = Math.floor((start + end) / 2);
-    if (arr[middle] < target) {
-      // Search the right half
-      start = middle + 1;
-    } else if (arr[middle] > target) {
-      // Search the left half
-      end = middle - 1;
-    } else if (arr[middle] === target) {
-      // Found target
-      return middle;
+function binarySer(arr, t) {
+  let s = 0;
+  let e = arr.length - 1;
+
+  while (s <= e) {
+    let mid = Math.floor((s + e) / 2);
+
+    if (arr[mid] < t) {
+      s = mid + 1;
+    } else if (arr[mid] > t) {
+      e = mid - 1;
+    } else if (arr[mid] == t) {
+      return t;
     }
   }
-  // Target not found
+
   return -1;
 }
-console.log(binarySearch([1, 2, 3, 4], 1));
+
+let arr = [1, 3, 5, 6, 8, 9, 10, 12, 15, 18, 19];
+let t = 3;
+
+console.log(binarySer(arr, t));
