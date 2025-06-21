@@ -3,7 +3,7 @@ function BesttimeforSrock(arr) {
   let maxprice = 0;
   let maxindex = 0;
   let minindex = 0;
-
+  // Added
   for (let price of arr) {
     if (price < min) {
       min = price;
